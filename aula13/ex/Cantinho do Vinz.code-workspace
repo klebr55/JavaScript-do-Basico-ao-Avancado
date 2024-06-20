@@ -2,13 +2,10 @@
 	"folders": [
 		{
 			"path": "../.."
-		},
-		{
-			"name": "SSH FS - HostingerSSH",
-			"uri": "ssh://hostingerconnect/home/u724950182"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "JavaScript"
+		"liveServer.settings.multiRootWorkspaceName": "JavaScript",
+		"chatgpt.model": "gpt-4o"
 	}
 }

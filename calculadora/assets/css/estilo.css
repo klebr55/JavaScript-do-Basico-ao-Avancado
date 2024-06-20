@@ -1,0 +1,29 @@
+body {
+    background: #f3f4f6;
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 400px;
+}
+
+.display input {
+    font-size: 2em;
+    text-align: right;
+}
+
+.btn-block {
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+.btn-warning {
+    background-color: #ff9500;
+    border-color: #ff9500;
+}
+
+.btn-warning:hover {
+    background-color: #e68900;
+    border-color: #e68900;
+}

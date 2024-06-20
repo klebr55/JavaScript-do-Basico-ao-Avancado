@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Maria Clara Viana</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        body {
+            background: #f3f4f6;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .calculator {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .display input {
+            font-size: 2em;
+            text-align: right;
+        }
+        
+        .btn-block {
+            font-size: 1.5em;
+            padding: 20px;
+        }
+        
+        .btn-warning {
+            background-color: #ff9500;
+            border-color: #ff9500;
+        }
+        
+        .btn-warning:hover {
+            background-color: #e68900;
+            border-color: #e68900;
+        }
+    </style>
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <h1 style="text-align: center;">Calculadora Maria Clara Viana</h1>
+    </div>
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="calculator card">
+            <div class="card-body">
+                <div class="display mb-3">
+                    <input type="text" id="result" class="form-control" readonly>
+                </div>
+                <div class="buttons">
+                    <div class="row mb-2">
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="clearDisplay()">C</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="deleteLast()">DEL</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('/')">/</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('*')">*</button></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('7')">7</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('8')">8</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('9')">9</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('-')">-</button></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('4')">4</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('5')">5</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('6')">6</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('+')">+</button></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('1')">1</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('2')">2</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('3')">3</button></div>
+                        <div class="col-3"><button class="btn btn-warning btn-block text-white" onclick="calculateResult()">=</button></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"><button class="btn btn-light btn-block" onclick="appendToDisplay('0')">0</button></div>
+                        <div class="col-3"><button class="btn btn-light btn-block" onclick="appendToDisplay('.')">.</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function clearDisplay() {
+            document.getElementById('result').value = '';
+        }
+        
+        function deleteLast() {
+            let display = document.getElementById('result').value;
+            document.getElementById('result').value = display.slice(0, -1);
+        }
+        
+        function appendToDisplay(value) {
+            document.getElementById('result').value += value;
+        }
+        
+        function calculateResult() {
+            let display = document.getElementById('result').value;
+            try {
+                document.getElementById('result').value = eval(display);
+            } catch {
+                document.getElementById('result').value = 'Erro';
+            }
+        }
+    </script>
+</body>
+</html>
