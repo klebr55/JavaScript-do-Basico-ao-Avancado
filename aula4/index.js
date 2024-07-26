@@ -4,7 +4,7 @@
 // Não podem conter espaços ou traços
 // Utilizamos camelCase
 // Case-sensitive
-
+ 
 /*
    Situações para utilizar 'var' em JavaScript:
    
